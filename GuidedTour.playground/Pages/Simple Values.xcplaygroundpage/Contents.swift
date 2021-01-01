@@ -32,7 +32,7 @@ let explicitFloat: Float = 4
 //:
 let label = "The width is "
 let width = 94
-//let widthLabel = label + String(width)
+let widthLabel = label + String(width)
 
 //: - Experiment:
 //: Try removing the conversion to `String` from the last line. What error do you get?
@@ -43,6 +43,7 @@ let apples = 3
 let oranges = 5
 let appleSummary = "I have \(apples) apples."
 let fruitSummary = "I have \(apples + oranges) pieces of fruit."
+let fruit = "I have \(1.5 * 2.0)"
 
 //: - Experiment:
 //: Use `\()` to include a floating-point calculation in a string and to include someone’s name in a greeting.
@@ -52,6 +53,9 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 let quotation = """
 I said "I have \(apples) apples."
 And then I said "I have \(apples + oranges) pieces of fruit."
+"""
+let abc = """
+Hello "How are you?".I'll do that.
 """
 
 //: Create arrays and dictionaries using brackets (`[]`), and access their elements by writing the index or key in brackets. A comma is allowed after the last element.
@@ -64,6 +68,8 @@ var occupations = [
     "Kaylee": "Mechanic",
  ]
 occupations["Jayne"] = "Public Relations"
+print(shoppingList)
+print(occupations)
 
 //: Arrays automatically grow as you add elements.
 //:
@@ -73,7 +79,8 @@ print(shoppingList)
 //: To create an empty array or dictionary, use the initializer syntax.
 //:
 let emptyArray = [String]()
-let emptyDictionary = [String: Float]()
+var emptyDictionary = [String: Float]()
+emptyDictionary["width"] = 1.2
 
 //: If type information can be inferred, you can write an empty array as `[]` and an empty dictionary as `[:]`—for example, when you set a new value for a variable or pass an argument to a function.
 //:

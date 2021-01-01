@@ -13,6 +13,11 @@ for score in individualScores {
 }
 print(teamScore)
 
+let intList = [10,11,12]
+for data in intList {
+    print("Int list => \(data)")
+}
+
 //: In an `if` statement, the conditional must be a Boolean expression—this means that code such as `if score { ... }` is an error, not an implicit comparison to zero.
 //:
 //: You can use `if` and `let` together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contains `nil` to indicate that a value is missing. Write a question mark (`?`) after the type of a value to mark the value as optional.
@@ -20,10 +25,21 @@ print(teamScore)
 var optionalString: String? = "Hello"
 print(optionalString == nil)
 
-var optionalName: String? = "John Appleseed"
+//var optionalName: String? = "John Appleseed"
+var optionalName: String? = nil
 var greeting = "Hello!"
 if let name = optionalName {
     greeting = "Hello, \(name)"
+}else{
+    greeting
+}
+
+var firstName: String? = "Hiro"
+var lastName = "Ro"
+var fullNames:String = ""
+if let name = firstName {
+    fullNames = name + " " + lastName
+    print("Hello, \(fullNames)")
 }
 
 //: - Experiment:
@@ -66,14 +82,17 @@ let interestingNumbers = [
     "Square": [1, 4, 9, 16, 25],
 ]
 var largest = 0
+var largestKind = "";
 for (kind, numbers) in interestingNumbers {
     for number in numbers {
         if number > largest {
             largest = number
+            largestKind = kind;
         }
     }
 }
 print(largest)
+print(largestKind)
 
 //: - Experiment:
 //: Add another variable to keep track of which kind of number was the largest, as well as what that largest number was.
@@ -84,21 +103,43 @@ var n = 2
 while n < 100 {
     n *= 2
 }
-print(n)
+print("while => \(n)")
 
 var m = 2
 repeat {
     m *= 2
 } while m < 100
-print(m)
+print("repeat while => \(m)")
+
+var nn = 1;
+while nn < 3 {
+    print("While nn=> \(nn)")
+    nn += 1
+}
+
+var mm = 1;
+repeat{
+    print("Repeat while mm=> \(mm)")
+    mm += 1
+} while mm < 3
 
 //: You can keep an index in a loop by using `..<` to make a range of indexes.
 //:
 var total = 0
-for i in 0..<4 {
+var evenTotal = 0
+for i in 0..<6 {
     total += i
+    if i % 2 == 0 {
+        evenTotal += i
+    }
 }
 print(total)
+print(evenTotal)
+
+for i in 0...6 {
+    print("Range => \(i)")
+}
+
 
 //: Use `..<` to make a range that omits its upper value, and use `...` to make a range that includes both values.
 //:

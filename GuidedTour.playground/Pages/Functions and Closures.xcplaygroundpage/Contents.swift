@@ -5,7 +5,8 @@
 func greet(person: String, day: String) -> String {
     return "Hello \(person), today is \(day)."
 }
-greet(person: "Bob", day: "Tuesday")
+var greetStr = greet(person: "Bob", day: "Friday")
+print(greetStr)
 
 //: - Experiment:
 //: Remove the `day` parameter. Add a parameter to include today’s lunch special in the greeting.
@@ -38,6 +39,10 @@ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
 let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
 print(statistics.sum)
 print(statistics.2)
+print(statistics.min)
+print(statistics.0)
+print(statistics.max)
+print(statistics.1)
 
 //: Functions can be nested. Nested functions have access to variables that were declared in the outer function. You can use nested functions to organize the code in a function that is long or complex.
 //:
@@ -81,7 +86,12 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
 //: Functions are actually a special case of closures: blocks of code that can be called later. The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions. You can write a closure without a name by surrounding code with braces (`{}`). Use `in` to separate the arguments and return type from the body.
 //:
 numbers.map({ (number: Int) -> Int in
-    let result = 3 * number
+    var result = 0
+    if number % 2 != 0 {
+        result = 0 * number
+    }else{
+        result = 3 * number
+    }
     return result
 })
 
