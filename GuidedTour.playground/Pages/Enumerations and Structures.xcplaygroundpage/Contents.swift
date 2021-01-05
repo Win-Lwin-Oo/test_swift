@@ -34,6 +34,7 @@ let aceRawValue = ace.rawValue
 //:
 if let convertedRank = Rank(rawValue: 3) {
     let threeDescription = convertedRank.simpleDescription()
+    print(threeDescription)
 }
 
 //: The case values of an enumeration are actual values, not just another way of writing their raw values. In fact, in cases where there isn’t a meaningful raw value, you don’t have to provide one.
@@ -53,9 +54,24 @@ enum Suit {
                 return "clubs"
         }
     }
+    
+    func color() -> String {
+        switch self {
+            case .spades:
+                return "black"
+            case .hearts:
+                return "red"
+            case .diamonds:
+                return "red"
+            case .clubs:
+                return "black"
+        }
+    }
 }
 let hearts = Suit.hearts
 let heartsDescription = hearts.simpleDescription()
+let clubs = Suit.clubs
+let colorDescription = clubs.color()
 
 //: - Experiment:
 //: Add a `color()` method to `Suit` that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.

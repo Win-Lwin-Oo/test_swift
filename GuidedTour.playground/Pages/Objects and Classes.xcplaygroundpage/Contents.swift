@@ -7,6 +7,10 @@ class Shape {
     func simpleDescription() -> String {
         return "A shape with \(numberOfSides) sides."
     }
+    
+    func simpleFunc(number: Int) -> String {
+        return "Hello \(number) number."
+    }
 }
 
 //: - Experiment:
@@ -17,6 +21,8 @@ class Shape {
 var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
+let constNumber = 12
+var simpleSide = shape.simpleFunc(number: constNumber)
 
 //: This version of the `Shape` class is missing something important: an initializer to set up the class when an instance is created. Use `init` to create one.
 //:
