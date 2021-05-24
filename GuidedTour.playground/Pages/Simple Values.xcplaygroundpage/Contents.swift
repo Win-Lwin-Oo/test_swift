@@ -4,6 +4,8 @@
 //:
 print("Hello, world!")
 print("Hello Swift")
+print(23)
+print(false)
 //: If you have written code in C or Objective-C, this syntax looks familiar to you—in Swift, this line of code is a complete program. You don’t need to import a separate library for functionality like input/output or string handling. Code written at global scope is used as the entry point for the program, so you don’t need a `main()` function. You also don’t need to write semicolons at the end of every statement.
 //:
 //: This tour gives you enough information to start writing code in Swift by showing you how to accomplish a variety of programming tasks. Don’t worry if you don’t understand something—everything introduced in this tour is explained in detail in the rest of this book.
@@ -24,6 +26,8 @@ let implicitInteger = 70
 let implicitDouble = 70.0
 let explicitDouble: Double = 70
 let explicitFloat: Float = 4
+let implicitBoolena = false
+let explicitBoolean: Bool = true
 
 //: - Experiment:
 //: Create a constant with an explicit type of `Float` and a value of `4`.
@@ -44,7 +48,9 @@ let oranges = 5
 let appleSummary = "I have \(apples) apples."
 let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 let fruit = "I have \(1.5 * 2.0)"
-
+let model = 12
+let phone = "I have iPhone \(model)."
+let area = "This area is \(5 * 6)."
 //: - Experiment:
 //: Use `\()` to include a floating-point calculation in a string and to include someone’s name in a greeting.
 //:
@@ -57,6 +63,10 @@ And then I said "I have \(apples + oranges) pieces of fruit."
 let abc = """
 Hello "How are you?".I'll do that.
 """
+let def = """
+    Yes, I'm fine.
+    And, I have also \(apples) apples.
+    """
 
 //: Create arrays and dictionaries using brackets (`[]`), and access their elements by writing the index or key in brackets. A comma is allowed after the last element.
 //:
@@ -71,6 +81,15 @@ occupations["Jayne"] = "Public Relations"
 print(shoppingList)
 print(occupations)
 
+var language = ["English", "Myanmar"]
+language[0] = "Japan"
+var capital = [
+    "Myanmar": "Napyitaw",
+    "England": "London"
+]
+capital["Thiland"] = "Bangkok"
+print(language)
+print(capital)
 //: Arrays automatically grow as you add elements.
 //:
 shoppingList.append("blue paint")
@@ -82,6 +101,18 @@ let emptyArray = [String]()
 var emptyDictionary = [String: Float]()
 emptyDictionary["width"] = 1.2
 
+var intArr = [Int]()
+var intDic = [String: Int]()
+intArr.append(10)
+intArr.append(20)
+intDic["one"] = 1
+intDic["two"] = 2
+intDic["three"] = 3
+intDic["four"] = 4
+print(intArr)
+print(intDic)
+print(intArr[0])
+print(intDic["four"]!)
 //: If type information can be inferred, you can write an empty array as `[]` and an empty dictionary as `[:]`—for example, when you set a new value for a variable or pass an argument to a function.
 //:
 shoppingList = []
