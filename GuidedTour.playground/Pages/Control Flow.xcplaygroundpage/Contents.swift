@@ -25,8 +25,8 @@ for data in intList {
 var optionalString: String? = "Hello"
 print(optionalString == nil)
 
-//var optionalName: String? = "John Appleseed"
-var optionalName: String? = nil
+var optionalName: String? = "John Appleseed"
+//var optionalName: String? = nil
 var greeting = "Hello!"
 if let name = optionalName {
     greeting = "Hello, \(name)"
@@ -40,8 +40,9 @@ var fullNames:String = ""
 if let name = firstName {
     fullNames = name + " " + lastName
     print("Hello, \(fullNames)")
+}else{
+    print("First name is nil")
 }
-
 //: - Experiment:
 //: Change `optionalName` to `nil`. What greeting do you get? Add an `else` clause that sets a different greeting if `optionalName` is `nil`.
 //:
@@ -105,7 +106,7 @@ while n < 100 {
 }
 print("while => \(n)")
 
-var m = 2
+var m = 102
 repeat {
     m *= 2
 } while m < 100
@@ -115,6 +116,7 @@ var nn = 1;
 while nn < 3 {
     print("While nn=> \(nn)")
     nn += 1
+    //print("While nn=> \(nn)")
 }
 
 var mm = 1;
